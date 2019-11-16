@@ -15,7 +15,7 @@ Aplikasi akan melakukan beberapa hal berikut (diketahui N adalah banyaknya angka
     * Timpa indeks 0 dari array targetData dengan angka looping saat ini dan lakukan filterDown
 * Mencetak M angka hasil dari proses heap
 
-# How To Run
+## How To Run
 File Program : main.c & fungsi.c <br>
 Compile : gcc -o hasil main.c fungsi.c <br>
 Run : ./hasil
