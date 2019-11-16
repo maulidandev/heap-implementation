@@ -6,7 +6,7 @@ void cetak(int angka[], int n){
 	for(i=0;i<n;i++)
 		printf("%d ",angka[i]);
 
-	printf("\n\n");
+	printf("\n");
 }
 
 void filterUp(int angka[], int n, int pos, char cek){
@@ -32,7 +32,7 @@ void filterDown(int *angka, int n, int parent, char cek){
 		while(parent <= (n-2)/2){
 			lchild=2*parent+1;
 			rchild=2*(parent+1);
-			printf("\t%d %d %d\n", lchild, parent, rchild);
+			// printf("\t%d %d %d\n", lchild, parent, rchild);
 			if((angka[lchild] <= angka[rchild]) || (rchild >= n)){
 				if(angka[lchild] < angka[parent]){
 					swap(&angka[parent],&angka[lchild]);

@@ -1,45 +1,36 @@
 #include "prototipe.h"
 #include <time.h>
-#define NA 100
-#define NS 10
+#define SIZE 10
 
 int main(){
-	int angka[NA];
-	int sort[NS], i;
+	int angka[SIZE];
+	int heapData[SIZE], i;
 
 	srand(time(NULL));
 
-	for(i=0;i<NA;i++)
+	for(i=0;i<SIZE;i++)
 		angka[i]=rand()%10+1;
 
-	printf("Data Asli : ");
-	cetak(angka,NA);
+	printf("---------------------------------------------\n");
+	printf("Data Asli : \n");
+	cetak(angka,SIZE);
 
 	/* Heapify */
-	for(i=0;i<NS;i++){
-		sort[i]=angka[i];
-		filterUp(sort,NS,i,'<');
-		cetak(sort,i+1);
+	for(i=0;i<SIZE;i++){
+		heapData[i]=angka[i];
+		filterUp(heapData,SIZE,i,'<');
 	}
-	printf("---------------------------------------------\n");
 
-	for(;i<NA;i++){
-		if(sort[0] < angka[i]){
-			sort[0]=angka[i];
-			filterDown(sort, NS, 0, '<');
-			cetak(sort, NS);
+	for(;i<SIZE;i++){
+		if(heapData[0] < angka[i]){
+			heapData[0]=angka[i];
+			filterDown(heapData, SIZE, 0, '<');
 		}
 	}
 
 	printf("---------------------------------------------\n");
-	cetak(sort,NS);
-	cetak(angka,NA);
-
-	bubble(sort,NS);
-	bubble(angka,NA);
-
-	cetak(sort,NS);
-	cetak(angka,NA);
+	printf("Data setelah di heapify : \n");
+	cetak(heapData,SIZE);
 
 	return 0;
 }
